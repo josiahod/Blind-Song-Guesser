@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind Song Ranker</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body class="magicpattern">
+    <!--Start of Container For Movie Posters-->
+    <div class="centered-div">
+        <div> 
+            <input type="text" id="searchInput" placeholder="Search...">
+            <div id="searchResults" class="dropdown-content"></div>
+        </div>
+        <div id="current-song">Current Song</div>
+        <div>
+            <audio id="audioPlayer" src=""></audio>
+
+            <button id="playButton">Play</button>
+            <button id="stopButton">Stop</button>
+        </div>
+        <div class="transparent-box" id="Rank1">
+            Rank 1
+        </div> 
+        <div class="transparent-box" id="Rank2">Rank 2</div>
+        <div class="transparent-box" id="Rank3">Rank 3</div>
+        <div class="transparent-box" id="Rank4">Rank 4</div>
+        <div class="transparent-box" id="Rank5">Rank 5</div>
+
+        <div class="transparent-box" id="reset" onclick="reset()">Reset</div>
+
+        <button id="open-btn">Open Overlay</button>
+
+        <div id="overlay">
+            <div id="overlay-content">
+              <h2>Order & Rankings</h2>
+              <div id="table-container"></div>
+              <button id="close-btn">Close</button>
+            </div>
+          </div>
+
+
+
+
+
+
+    </div>
+
+    
+</body>
+</html>
