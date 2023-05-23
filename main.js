@@ -63,6 +63,8 @@ async function getArtist(searchTerm)
 {
 try
 {
+  var loading = document.getElementById('current-song');
+  loading.innerHTML = "Loading..."
     var songList = [];
     let token = await _getToken();
     let headers = new Headers([
@@ -82,6 +84,7 @@ try
 
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
+ 
 
     if (searchTerm.length > 0) {
         const matchedResults = await getMatchedResults(searchTerm);
@@ -237,6 +240,10 @@ try
     
     if ( clickedButtons.includes(1) && clickedButtons.includes(2) && clickedButtons.includes(3) && clickedButtons.includes(4) && clickedButtons.includes(5)) 
     {
+      const finishedReset = document.getElementById('current-song');
+      finishedReset.innerHTML = "Press Reset To Play Again";
+      const changeReset = document.getElementById('reset');
+      changeReset.style.border = "4px solid black";
         throw new Error("Finished");
     }
 
@@ -382,7 +389,14 @@ openBtn.addEventListener('click', function() {
 
 order.unshift("Order");
 ranking.unshift("Ranking");
+var arrIdx = ["", 1, 2, 3, 4, 5];
 var mergedArray = ( order.map((element, index) => [element, ranking[index]]));
+console.log(mergedArray.length);
+for(var j = 0; j < mergedArray.length; j++)
+{
+mergedArray[j].unshift(arrIdx[j]);
+}
+console.log(mergedArray);
 
   
   function printTable() {
