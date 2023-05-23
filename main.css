@@ -127,6 +127,8 @@ footer{
     height: 100vh; /* Set the height of the container to full viewport height */
   }
 
+
+
   .transparent-box {
     width: 400px; /* Set the desired width */
     height: 50px; /* Set the desired height */
@@ -268,6 +270,37 @@ footer{
     align-items: center;
     margin: 3px;
   }
+
+  @media only screen and (max-width: 400px) 
+  {
+    .transparent-box, #searchInput, #current-song
+    {
+      width: 250px; /* Set the desired width */
+      height: 150px; /* Set the desired height */
+    }
+
+    #searchInput
+    {
+      margin-top: 50px;
+      height:75px;
+    }
+
+    #reset, #open-btn
+    {
+      width: 200px; /* Set the desired width */
+      height: 75px; 
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer
+    {
+      margin-top: 10px;
+      font-size: 9px;
+    }
+
+  }
+
 
   .magicpattern { 
     width: 100%;
