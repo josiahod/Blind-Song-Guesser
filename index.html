@@ -54,6 +54,31 @@
             <div id="overlay-content">
               <h2>Order & Rankings</h2>
               <div id="table-container"></div>
+              <script type="text/javascript" src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
+              <button id="convert" style="margin-top: 10px";>
+                Download Image
+                </button>
+              <div id="result"></div>
+              <script>
+                //convert table to image            
+                function convertToImage() {
+                   var resultDiv = document.getElementById("result");
+                   html2canvas(document.getElementById("table-container"), {
+                         dpi: 300,
+                       onrendered: function(canvas) {
+                           var imageUrl = canvas.toDataURL("image/png");
+                           console.log(imageUrl);
+                            var anchor = document.createElement('a');
+                            anchor.href = imageUrl;
+                            anchor.download = 'image.';
+                            anchor.click();
+                           }
+                   });
+                }        
+                //click event
+                var convertBtn = document.getElementById("convert");
+                convertBtn.addEventListener('click', convertToImage);
+             </script>
               <button id="close-btn">Close</button>
             </div>
           </div>

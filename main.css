@@ -129,6 +129,11 @@ body{
     height: 100vh; /* Set the height of the container to full viewport height */
   }
 
+  .convert
+  {
+    margin-top: 10px;
+  }
+
 
 
   .transparent-box {
@@ -216,7 +221,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
   }
 
+  table-container
+  {
+    padding: 10px;
+  }
+
   table {
+    padding: 10px;
     border-collapse: collapse;
     width: 100%;
     font-family: Arial, sans-serif;

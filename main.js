@@ -399,7 +399,8 @@ mergedArray[j].unshift(arrIdx[j]);
 console.log(mergedArray);
 
   
-  function printTable() {
+  function printTable() 
+  {
     const tableContainer = document.getElementById('table-container');
     
     table = document.createElement('table');
@@ -418,9 +419,15 @@ console.log(mergedArray);
     }
     
     tableContainer.appendChild(table);
+
   }
-  
+
   printTable();
+
+
+
+
+
 
   overlay.style.display = 'block';
 });
