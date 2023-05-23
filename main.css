@@ -19,6 +19,11 @@ body{
     background-size: 100%;
 }
 
+footer{
+  font-size: medium;
+  color: white;
+}
+
 
 /* Styles for Song posters */
 .container{
@@ -145,7 +150,7 @@ body{
     height: 50px; /* Set the desired height */
     font-size: medium;
     text-overflow: ellipsis;
-    background-color: rgb(214, 96, 96);
+    background-color: rgb(206, 58, 58);
     border: 2px solid black; /* Set the desired outline color */
     text-align: center;
     color: rgb(210, 204, 204);
@@ -241,11 +246,8 @@ body{
     background-color: rgba(212, 211, 228, 0.594);
     border: 2px solid black; /* Set the desired outline color */
     text-align: center;
+    font-size: 18px;
     color: black;
-
-    display: flex;
-    font-size: medium;
-    text-overflow: ellipsis;
     align-items: center;
     margin: 3px;
   }

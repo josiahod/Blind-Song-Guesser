@@ -206,7 +206,7 @@ async function moreTracks(songList, url, status, id, dupList)
 
      console.log(songList);
      console.log(status);
-     if(status < 3)
+     if(status < 5)
      moreTracks(songList, response.tracks.next, ++status, id, dupList);
      else 
      {
@@ -227,9 +227,6 @@ var order = [];
 var ranking = [];
 async function loadSong(songList, clickedButtons)
 {
-
-  
-
 try
 {
 
@@ -354,18 +351,7 @@ catch(error)
 
 function reset()
 {
-    
-    order = [];
-    ranking = [];
-    audioPlayer.pause();
-    audioPlayer.currentTime = 0;
-    document.getElementById('Rank1').textContent = "Rank 1";
-    document.getElementById('Rank2').textContent = "Rank 2";
-    document.getElementById('Rank3').textContent = "Rank 3";
-    document.getElementById('Rank4').textContent = "Rank 4";
-    document.getElementById('Rank5').textContent = "Rank 5";
-    document.getElementById('current-song').textContent = "";
-    document.getElementById('searchInput').value = "";
+  location.reload();
 }
 
 
