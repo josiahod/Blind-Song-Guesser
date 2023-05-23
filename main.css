@@ -1,3 +1,4 @@
+
 /* RESET DEFAULT BROWSER STYLES */
 *, *::after, *::before{
     margin: 0;
@@ -192,7 +193,7 @@ footer{
     margin: 3px;
   }
   
-  #reset
+  #reset, #tutorial
   {
     width: 100px; /* Set the desired width */
     height: 39px; /* Set the desired height */
@@ -206,6 +207,12 @@ footer{
     text-overflow: ellipsis;
     align-items: center;
     margin: 3px;
+  }
+
+  #reset, #tutorial, #open-btn
+  {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   table {
@@ -285,7 +292,7 @@ footer{
       height:75px;
     }
 
-    #reset, #open-btn
+    #reset, #open-btn, #tutorial
     {
       width: 200px; /* Set the desired width */
       height: 75px; 

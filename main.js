@@ -2,6 +2,8 @@ const audioPlayer = document.getElementById("audioPlayer");
 const playButton = document.getElementById("playButton");
 const stopButton = document.getElementById("stopButton");
 
+
+
 playButton.addEventListener("click", function() {
   audioPlayer.play();
 });
@@ -10,6 +12,12 @@ stopButton.addEventListener("click", function() {
   audioPlayer.pause();
   audioPlayer.currentTime = 0;
 });
+
+
+function Instruction()
+{
+ alert("Enter the name of a musical artist. You will then be tasked with ranking 5 songs by that artist with a small caveat. You will have to rank the songs without knowing what song comes next!")
+}
 
 
 // Declarations for our song values
@@ -191,7 +199,6 @@ async function moreTracks(songList, url, status, id, dupList)
 
         let result = await fetch(request);
         let response = await result.json();
-        console.log(response.tracks.items);
         for(var i = 0; i < response.tracks.items.length; i++)
         {
             if(response.tracks.items[i].artists[0].id == id) 
@@ -204,13 +211,10 @@ async function moreTracks(songList, url, status, id, dupList)
             }
         } 
 
-     console.log(songList);
-     console.log(status);
      if(status < 5)
      moreTracks(songList, response.tracks.next, ++status, id, dupList);
      else 
      {
-     console.log(songList);
      loadSong(songList, []);
      }
     }
@@ -237,10 +241,22 @@ try
     }
 
     // Get random index within the array length
-    const randomIndex = Math.floor(Math.random() * songList.length);
+    var randomIndex = Math.floor(Math.random() * songList.length);
 
     // Get random value from the array
-    const randomValue = songList[randomIndex];
+    var randomValue = songList[randomIndex];
+
+    var loopcount = 0;
+    while(order.includes(randomValue[0]))
+    {
+      console.log("REPEAT SONG");
+      randomIndex = Math.floor(Math.random() * songList.length);
+      var randomValue = songList[randomIndex];
+      if(loopcount > 5)
+      throw new Error("INFINITE LOOP");
+
+    }
+
     const Rank1 = document.getElementById('Rank1');
     const Rank2 = document.getElementById('Rank2');
     const Rank3 = document.getElementById('Rank3');
@@ -367,7 +383,6 @@ openBtn.addEventListener('click', function() {
 order.unshift("Order");
 ranking.unshift("Ranking");
 var mergedArray = ( order.map((element, index) => [element, ranking[index]]));
-console.log(mergedArray);
 
   
   function printTable() {
